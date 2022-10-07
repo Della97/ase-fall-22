@@ -82,7 +82,7 @@ class Game:
         player_moves = []
         for i in range(self._current_moves):
             for k in range(self._current_moves[i]):
-                if self._current_moves[i][j].label == move.label:
+                if self._current_moves[i][k].label == move.label:
                     player_moves.insert(Move(i,k))
                 
         for i in range(self._winning_combos):
@@ -104,7 +104,7 @@ class Game:
         """Return True if the game is tied, and False otherwise."""
         # TODO: check whether a tie was reached.
         # There is no winner and all moves have been tried.
-        if (no_winner == True && enumerate(self._current_moves)==9):
+        if (no_winner == True and len(self._current_moves) == 9):
             #Game is Tied
             return True
         else:
