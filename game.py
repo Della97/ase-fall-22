@@ -58,12 +58,12 @@ class Game:
         # Use variables no_winner and move_not_played.
 
         if (self._current_moves[move.col][move.row].label == ""):
-            # Move already played
+            # Move OK
             print("Move OK!")
             no_winner = False;
             move_not_played = True;
         else:
-            # Move not played b4
+            # Move played b4
             #self._update_display(msg="Move ok", color="red")
             print("Move already played")
             no_winner = False;
