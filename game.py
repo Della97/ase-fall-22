@@ -1,4 +1,5 @@
 from itertools import cycle
+from operator import truediv
 from typing import NamedTuple
 
 class Player(NamedTuple):
@@ -77,6 +78,22 @@ class Game:
         # Do not return any values but set variables  self._has_winner 
         # and self.winner_combo in case of winning combo.
         # Hint: you can scan pre-computed winning combos in self._winning_combos
+        player = move.label
+        player_moves = []
+        for i in range(self._current_moves):
+            for k in range(self._current_moves[i]):
+                if self._current_moves[i][j].label == move.label:
+                    player_moves.insert(Move(i,k))
+                
+        for i in range(self._winning_combos):
+            if self._winning_combos[i] == player_moves:
+                self._has_winner = True
+                self.winner_combo = player_moves
+                return
+        
+        self._has_winner = False
+        return
+             
 
 
     def has_winner(self):
