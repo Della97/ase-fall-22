@@ -55,6 +55,17 @@ class Game:
         # and that there is no winner yet. Note that non-played cells
         # contain an empty string (i.e. ""). 
         # Use variables no_winner and move_not_played.
+
+        if (self._current_moves[move.col][move.row] == ""):
+            # Move already played
+            #self._update_display(msg="Illegal Move", color="red")
+            no_winner = False;
+            move_not_played = False;
+        if (self._current_moves[move.col][move.row] != ""):
+            # Move not played b4
+            #self._update_display(msg="Move ok", color="red")
+            no_winner = False;
+            move_not_played = True;
         
         return no_winner and move_not_played
 
