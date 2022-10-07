@@ -84,7 +84,7 @@ class Game:
         for i in range(self._current_moves):
             for k in range(self._current_moves[i]):
                 if self._current_moves[i][k].label == move.label:
-                    player_moves.insert(Move(i,k))
+                    player_moves.insert((i,k))
                 
         for i in range(self._winning_combos):
             if self._winning_combos[i] == player_moves:
