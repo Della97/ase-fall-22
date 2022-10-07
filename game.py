@@ -61,7 +61,7 @@ class Game:
             #self._update_display(msg="Illegal Move", color="red")
             no_winner = False;
             move_not_played = False;
-        else:
+        if (self._current_moves[move.col][move.row] != ""):
             # Move not played b4
             #self._update_display(msg="Move ok", color="red")
             no_winner = False;
@@ -99,6 +99,8 @@ class Game:
         """Return a toggled player."""
         # TODO: switches self.current_player to the other player.
         # Hint: https://docs.python.org/3/library/functions.html#next
+        self.current_player.next
+        return self.current_player
        
     def reset_game(self):
         """Reset the game state to play again."""
