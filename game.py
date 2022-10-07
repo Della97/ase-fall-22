@@ -61,7 +61,7 @@ class Game:
             #self._update_display(msg="Illegal Move", color="red")
             no_winner = False;
             move_not_played = False;
-        if (self._current_moves[move.col][move.row] != ""):
+        else:
             # Move not played b4
             #self._update_display(msg="Move ok", color="red")
             no_winner = False;
@@ -87,6 +87,13 @@ class Game:
         """Return True if the game is tied, and False otherwise."""
         # TODO: check whether a tie was reached.
         # There is no winner and all moves have been tried.
+        if (no_winner == True && enumerate(self._current_moves)==9):
+            #Game is Tied
+            return True
+        else:
+            #Game is not Tied
+            return False
+
 
     def toggle_player(self):
         """Return a toggled player."""
